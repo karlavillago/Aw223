@@ -1,0 +1,90 @@
+
+/* configuracion gral
+ */*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+ font-family: Arial, Helvetica, sans-serift;
+    line-height:1.6;
+    color: black;
+    background-color: #f5f5f5;
+}
+
+
+/* ENCABEZADO */
+
+header{
+    text-align: center;
+    padiding: 50px 20px;
+    background-color: purple;
+    color: white;/* colores */
+}
+
+header h1{
+    /* solo aplica al h1 heather */
+    margin: 0;
+    front-size: 48px;
+}
+heather p{
+    margin-top: 10px;
+    front-size: 20px;
+    front-style: italic;
+    
+}
+
+
+/* NAVEGACION DIFERENTES SECCIONES */
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 25px;/* separaciones */
+    padding: 20px;
+    background-color: lightpink;
+    border-bottom: 1px solid gray;
+}
+nav a{
+    color: aquamarine;
+    text-decoration: none;
+    front-weight: bold;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+/* main */
+main{
+    max-width:1100px ;
+    margin:0 auto;
+    background-color: gray;
+
+}
+/* secciones */
+section{
+    padding: 60px 40px;
+    border-bottom: 1px solid #add;
+}
+section h2{
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+    front-size: 30px;
+}
+/* secciones */
+
+
+.seccion-inicio{
+
+    min-height: 400px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
