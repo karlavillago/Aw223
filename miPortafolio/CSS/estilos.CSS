@@ -68,7 +68,7 @@ main{
 /* secciones */
 section{
     padding: 60px 40px;
-    border-bottom: 1px solid #add;
+    border-bottom: 4px solid #add;
 }
 section h2{
     margin-top: 0px;
@@ -86,5 +86,97 @@ section h2{
     justify-content: center;
     align-content: center;
     text-align: center;
+    
 }
 
+.seccion-contenido{
+    max-width: 700px;
+
+}
+
+.seccion-contenido h2{
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.seccion-contenido p{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* botton  */
+.boton,botton{
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: azure;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.boton:hover,button:hover{
+    background-color: greenyellow;
+    color: black;
+}
+/* seccion sobre mi contenido */
+.sobre-mi-contenido{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+.sobre-mi-contenido img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+.sobre-mi-contenido p{
+    fron-size: 18px;
+
+}
+.lista-habilidades{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+.lista-habilidades li{
+    padding: 12px 20px;
+    background-color: plum;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+}
+/* seccion proyectos */
+.contenedor-proyectos{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+.proyecto{
+    flex: 1;
+    min-width: 250px;
+    padding: 25px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: bisque;
+
+}
+.proyecto h3{
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.proyecto a{
+    color: rosybrown;
+    font-weight: bold;
+}
