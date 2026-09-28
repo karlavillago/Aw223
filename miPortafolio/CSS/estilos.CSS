@@ -35,6 +35,18 @@ header p{
     font-style: italic;
 }
 
+.boton-js {
+    margin-top: 20px;
+    background-color: white;
+    color: purple;
+    font-weight: bold;
+}
+
+.boton-js:hover {
+    background-color: greenyellow;
+    color: black;
+}
+
 /* NAVEGACION */
 nav{
     display: flex;
@@ -144,6 +156,7 @@ section h2{
     gap: 15px;
     padding: 0;
     list-style: none;
+    margin-bottom: 25px;
 }
 
 .lista-habilidades li{
@@ -152,6 +165,12 @@ section h2{
     border: 3px solid black;
     border-radius: 50px;
     font-weight: bold;
+}
+
+.botones-habilidades {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 /* PROYECTOS */

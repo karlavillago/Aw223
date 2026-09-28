@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,12 @@
 </head>
 
 <body>
-    <!-- Encabezado -->
+    <!-- Encabezado (Modificación Punto A: ID en título y botón agregado) -->
     <header>
-        <h1>Mi Portafolio</h1>
-        <p>Bienvenido a mi sitio web personal</p>
-    </header>
+    <h1 id="titulo-bienvenida">Mi Portafolio</h1>
+    <p id="subtitulo-bienvenida">Bienvenido a mi sitio web personal</p>
+    <button id="btn-cambiar-mensaje" class="boton-js">Cambiar Mensaje</button>
+</header>
 
     <!-- Navegación -->
     <nav>
@@ -46,16 +47,20 @@
             </div>
         </section>
 
-        <!-- Sección Habilidades -->
+        <!-- Sección Habilidades (Modificación Punto B: clases agregadas y botones nuevos) -->
         <section id="habilidades">
             <h2>Mis habilidades</h2>
            <ul class="lista-habilidades">
-            <li>Scratch</li>
-            <li>JAVA</li>
-            <li>PSeInt</li>
-            <li>Packet Tracer</li>
-            <li>MySQL</li>
+            <li class="skill-item">Scratch</li>
+            <li class="skill-item">JAVA</li>
+            <li class="skill-item">PSeInt</li>
+            <li class="skill-item">Packet Tracer</li>
+            <li class="skill-item">MySQL</li>
            </ul>
+           <div class="botones-habilidades">
+               <button id="btn-color">Cambiar color</button>
+               <button id="btn-fuente">Cambiar tipo de letra</button>
+           </div>
         </section>
 
         <!-- Sección de Proyectos -->
@@ -75,10 +80,10 @@
             </div>
         </section>
 
-        <!-- Sección de Contacto -->
+        <!-- Sección de Contacto (Modificación Punto C: ID agregado al formulario) -->
         <section id="contacto">
             <h2>Contáctame</h2>
-            <form action="">
+            <form id="form-contacto">
                 <div class="campo">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="nombre">
@@ -104,5 +109,8 @@
         <p>2026 Mi portafolio web</p>
         <p>Práctica de programación web - Todos los derechos reservados</p>
     </footer>
+
+    <!-- Enlazando el archivo JavaScript en su propia carpeta -->
+    <script src="./js/main.js"></script>
 </body>
 </html>
