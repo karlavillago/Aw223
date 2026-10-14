@@ -1,9 +1,11 @@
+
 /* ==========================================================
    PRÁCTICA No. 3: HTML + CSS + JS
    Alumna: Maricruz Villagómez
    ========================================================== */
 
 // --- PUNTO A: Cambiar el HTML desde JS ---
+/*
 const btnCambiarMensaje = document.getElementById('btn-cambiar-mensaje');
 const subtituloBienvenida = document.getElementById('subtitulo-bienvenida');
 
@@ -59,3 +61,4 @@ formContacto.addEventListener('submit', (evento) => {
     alert('Formulario enviado correctamente');
     formContacto.reset(); // Limpia el formulario
 });
+*/

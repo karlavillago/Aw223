@@ -84,20 +84,20 @@
         <!-- Sección de Contacto (Modificación Punto C: ID agregado al formulario) -->
         <section id="contacto">
             <h2>Contáctame</h2>
-            <form id="form-contacto">
+            <form id="formulario" action="guardar_mensaje.php" method="post>
                 <div class="campo">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre">
+                    <input type="text" id="nombre" name="txtnombre">
                 </div>
 
                 <div class="campo">
                     <label for="correo">Correo</label>
-                    <input type="email" id="correo" name="correo">
+                    <input type="email" id="correo" name="txtcorreo">
                 </div>
 
                 <div class="campo">
                     <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+                    <textarea id="mensaje" name="txtmensaje" rows="5"></textarea>
                 </div>
                 
                 <button type="submit" class="boton">Enviar mensaje</button>
