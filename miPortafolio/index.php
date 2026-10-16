@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -84,7 +84,7 @@
         <!-- Sección de Contacto (Modificación Punto C: ID agregado al formulario) -->
         <section id="contacto">
             <h2>Contáctame</h2>
-            <form id="formulario" action="guardar_mensaje.php" method="post>
+            <form id="formulario" action="guardar_mensaje.php" method="post">
                 <div class="campo">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="txtnombre">
@@ -112,6 +112,6 @@
     </footer>
 
     <!-- Enlazando el archivo JavaScript en su propia carpeta -->
-    <script src="./js/main.js"></script>
+    <script src="js/Alertinsert.js"></script>
 </body>
 </html>
