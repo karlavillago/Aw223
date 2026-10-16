@@ -1,8 +1,6 @@
 <?php
-// 1. Incluimos la conexión a la base de datos
 require_once("conexion.php");
 
-// 2. Consultamos los mensajes reales guardados
 $sql = "SELECT * FROM mensajes";
 $resultado = $conexion->query($sql);
 ?>
@@ -11,72 +9,93 @@ $resultado = $conexion->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Administración - Mi Portafolio</title>
-    <link rel="stylesheet" href="./CSS/estilos.css">
+    <title>Administracion | Mi Portafolio</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <style>
+        /* Estilo para asegurar que la tabla tenga líneas divisorias en las casillas */
+        .tabla-mensajes table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tabla-mensajes th, .tabla-mensajes td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        /* Centrar la casita en su barra */
+        .barra-home {
+            text-align: center;
+            padding: 8px 0;
+        }
+        .barra-home a {
+            color: #333333;
+            display: inline-block;
+            text-decoration: none;
+        }
+        /* Iconos de acciones en negro */
+        .btn-accion svg {
+            stroke: #000000;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Encabezado -->
-    <header>
+    <!-- Encabezado con la franja morada -->
+    <header class="encabezado-admin">
         <h1>Zona Administración</h1>
         <p>Mensajes Recibidos</p>
     </header>
-
-    <!-- Icono Casita (Regreso al Portafolio) -->
-    <nav style="text-align: center; padding: 15px;">
-        <a href="index.php" title="Regresar al portafolio" style="color: #333; text-decoration: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10" />
-            </svg>
+    
+    <!-- Franja rosada con el icono de casa centrado -->
+    <div class="barra-home">
+        <a href="index.php" title="Regresar al portafolio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
         </a>
-    </nav>
+    </div>
 
-    <!-- Tabla -->
-    <main style="padding: 20px; max-width: 900px; margin: auto;">
-        <h2 style="text-align: center; margin-bottom: 20px;">Mensajes Recibidos</h2>
-        
-        <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-            <thead>
-                <tr style="background-color: #333; color: white;">
-                    
-                    <th style="padding: 10px;">Nombre</th>
-                    <th style="padding: 10px;">Correo</th>
-                    <th style="padding: 10px;">Mensaje</th>
-                     <th style="padding: 10px;">Fecha</th>
-                    <th style="padding: 10px;">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($row = $resultado->fetch_assoc()){ ?>
-                <tr>
-                    <td style="padding: 10px; text-align: center;"><?php echo $row['id']; ?></td>
-                    <td style="padding: 10px;"><?php echo $row['nombre']; ?></td>
-                    <td style="padding: 10px;"><?php echo $row['correo']; ?></td>
-                    <td style="padding: 10px;"><?php echo $row['mensaje']; ?></td>
-                    
-                    <td style="padding: 10px; text-align: center;">
-                        <!-- Icono Editar (Lápiz) -->
-                        <a href="editar.php?id=<?php echo $row['id']; ?>" title="Editar" style="color: #333; text-decoration: none; margin-right: 8px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="vertical-align: middle;">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg>
-                        </a>
-                        <!-- Icono Borrar (Bote de basura) -->
-                        <a href="#" title="Eliminar" style="color: #333; text-decoration: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="vertical-align: middle;">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
-                        </a>
-                    </td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+    <!-- Contenido principal -->
+    <main>
+        <section>
+            <h2>Mensajes Recibidos</h2>
+            
+            <div class="tabla-mensajes">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Mensaje</th>
+                            <th>Fecha</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while($fila = $resultado->fetch_assoc()) { ?>
+                            <tr>
+                                <td><?php echo $fila['nombre']; ?></td>
+                                <td><?php echo $fila['correo']; ?></td>
+                                <td><?php echo $fila['mensaje']; ?></td>
+                                <td><?php echo $fila['timeStaps']; ?></td>
+                                <td>
+                                    <!-- Iconos en negro -->
+                                    <a href="#" class="btn-accion" title="Editar">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                                    </a>
+                                    <a href="#" class="btn-accion" title="Eliminar">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <!-- Pie de página -->
-    <footer style="text-align: center; padding: 20px; margin-top: 40px;">
-        <p>&copy; 2026 Mi Portafolio | Práctica de Programación Web</p>
+    <footer>
+        <p>© 2026 Mi Portafolio | Práctica de Programación Web</p>
     </footer>
 
 </body>
