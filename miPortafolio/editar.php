@@ -3,63 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Mensaje - Zona Administración</title>
-    <link rel="stylesheet" href="./CSS/estilos.css">
+    <title>Editar mensaje | Portafolio de Karla María Cruz Villagómez Jiménez</title>
+    <link rel="stylesheet" href="./css/estilos.css">
 </head>
+
 <body>
 
     <!-- Encabezado -->
-    <header>
-        <h1>Zona Administración</h1>
-        <p>Formulario para Editar</p>
+    <header class="encabezado-admin">
+        <h1>Editar mensaje</h1>
+        <p>Modificar los datos del mensaje seleccionado</p>
     </header>
 
-    <!-- Iconos Superiores: Recargar/Admin y Casita -->
-    <nav style="text-align: center; padding: 15px; display: flex; justify-content: center; gap: 15px;">
-        <!-- Icono Recargar / Volver a Admin -->
-        <a href="admin.php" title="Regresar a Zona Admin" style="color: #333; text-decoration: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
+    <nav>
+        <a href="index.php" class="regresar" title="Regresar al portafolio">
+            <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
         </a>
-        <!-- Icono Casita -->
-        <a href="index.php" title="Regresar al portafolio" style="color: #333; text-decoration: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10" />
-            </svg>
+        <a href="admin.php" class="regresar" title="Regresar a administracion">
+            <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
         </a>
     </nav>
 
-    <!-- Contenido Principal -->
-    <main style="padding: 20px; max-width: 600px; margin: auto;">
-        <h2 style="text-align: center; margin-bottom: 20px;">Editar Mensaje</h2>
-        
-        <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-            <div>
-                <label for="nombre" style="display: block; margin-bottom: 5px; font-weight: bold;">Nombre</label>
-                <input type="text" id="nombre" name="nombre" value="Juan" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            </div>
+    <!-- Contenido principal -->
+    <main>
+        <section>
+            <h2>Formulario de edicion</h2>
 
-            <div>
-                <label for="correo" style="display: block; margin-bottom: 5px; font-weight: bold;">Correo electrónico</label>
-                <input type="email" id="correo" name="correo" value="juan@example.com" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            </div>
+            <form id="formEditar">
 
-            <div>
-                <label for="mensaje" style="display: block; margin-bottom: 5px; font-weight: bold;">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">Hola, me interesa tu portafolio.</textarea>
-            </div>
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" value="" required>
+                </div>
 
-            <button type="submit" style="background-color: #333; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
-                Actualizar Mensaje
-            </button>
-        </form>
+                <div class="campo">
+                    <label for="correo">Correo electronico:</label>
+                    <input type="email" id="correo" value="" required>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Actualizar mensaje</button>
+
+                <p id="resultadoEditar"></p>
+
+            </form>
+        </section>
     </main>
 
-    <!-- Pie de página -->
-    <footer style="text-align: center; padding: 20px; margin-top: 40px;">
-        <p>&copy; 2026 Mi Portafolio | Práctica de Programación Web</p>
+    <!-- Pie de pagina -->
+    <footer>
+        <p>&copy; 2026 Karla María Cruz Villagómez Jiménez</p>
+        <p>Practica de Programacion Web</p>
     </footer>
+
+    <script>
+        // Mensajes de ejemplo
+        var mensajes = {
+            1: {
+                nombre: "Karla María",
+                correo: "ejemplo@correo.com",
+                mensaje: "Hola, me gusto tu portafolio."
+            }
+        };
+
+        // Obtener el numero del mensaje seleccionado
+        var parametros = new URLSearchParams(window.location.search);
+        var id = parametros.get("id");
+
+        // Mostrar los datos en el formulario
+        if (mensajes[id]) {
+            document.getElementById("nombre").value = mensajes[id].nombre;
+            document.getElementById("correo").value = mensajes[id].correo;
+            document.getElementById("mensaje").value = mensajes[id].mensaje;
+        } else {
+            document.getElementById("resultadoEditar").textContent =
+                "No se encontro el mensaje seleccionado.";
+        }
+
+        // Simular la actualizacion
+        document.getElementById("formEditar").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("resultadoEditar").textContent =
+                "Los cambios no se guardan permanentemente.";
+        });
+    </script>
 
 </body>
 </html>

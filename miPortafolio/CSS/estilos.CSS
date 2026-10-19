@@ -1,134 +1,126 @@
 
-/* configuracion gral
- */*{
+/* Paleta: morado #5b2a86 | morado oscuro #3b1459 | lila #d9c7f0 | lila claro #f3ecfb | negro #000 */
+
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: black;
-    background-color: #f5f5f5;
+    background-color: #f4f4f4;
 }
 
-/* ENCABEZADO */
-header{
+/* Encabezado */
+header {
     text-align: center;
     padding: 50px 20px;
-    background-color: purple;
+    background-color: #5b2a86;
     color: white;
 }
 
-header h1{
+header h1 {
     margin: 0;
     font-size: 48px;
 }
 
-header p{
+header p {
     margin-top: 10px;
     font-size: 20px;
     font-style: italic;
 }
 
-.boton-js {
-    margin-top: 20px;
-    background-color: white;
-    color: purple;
-    font-weight: bold;
-}
-
-.boton-js:hover {
-    background-color: greenyellow;
-    color: black;
-}
-
-/* NAVEGACION */
-nav{
+/* Navegacion */
+nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 25px;
     padding: 20px;
-    background-color: lightpink;
-    border-bottom: 1px solid gray;
+    background-color: #d9c7f0;
+    border-bottom: 1px solid #b9a0dc;
 }
 
-nav a{
-    color: darkmagenta;
+nav a {
+    color: #3b1459;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover{
+nav a:hover {
     text-decoration: underline;
 }
 
 /* MAIN */
-main{
-    max-width: 1100px;
+main {
+    max-width: 1300px;
     margin: 0 auto;
     background-color: white;
 }
 
-/* SECCIONES */
-section{
+/* Secciones */
+section {
     padding: 60px 40px;
-    border-bottom: 4px solid #ddd;
+    border-bottom: 4px solid #d9c7f0;
 }
 
-section h2{
-    margin-top: 0px;
+section h2 {
+    margin-top: 0;
     margin-bottom: 30px;
     text-align: center;
     font-size: 30px;
+    color: #3b1459;
 }
 
-.seccion-inicio{
+/* Seccion de Inicio */
+.seccion-inicio {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     text-align: center;
 }
 
-.seccion-contenido{
+.seccion-contenido {
     max-width: 700px;
 }
 
-.seccion-contenido h2{
+.seccion-contenido h2 {
     font-size: 42px;
     margin-bottom: 15px;
 }
 
-.seccion-contenido p{
+.seccion-contenido p {
     font-size: 20px;
     margin-bottom: 30px;
 }
 
-/* BOTONES */
-.boton, button{
+/* Boton */
+.boton, button {
     display: inline-block;
     padding: 12px 25px;
     border: none;
     border-radius: 5px;
     background-color: black;
-    color: azure;
+    color: white;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
 }
 
-.boton:hover, button:hover{
-    background-color: greenyellow;
-    color: black;
+.boton:hover, button:hover {
+    background-color: #5b2a86;
+    color: white;
 }
 
-/* SOBRE MI */
-.sobre-mi-contenido{
+/* Seccion Sobre Mi */
+.sobre-mi-contenido {
     display: flex;
     align-items: center;
     gap: 50px;
@@ -136,70 +128,69 @@ section h2{
     margin: 0 auto;
 }
 
-.sobre-mi-contenido img{
+.sobre-mi-contenido img {
     width: 200px;
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
-    background-color: #ccc; /* Placeholder visual si no hay foto */
 }
 
-.sobre-mi-contenido p{
+.sobre-mi-contenido p {
     font-size: 18px;
 }
 
-/* HABILIDADES */
-.lista-habilidades{
+/* Habilidades */
+.lista-habilidades {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     padding: 0;
     list-style: none;
-    margin-bottom: 25px;
 }
 
-.lista-habilidades li{
+.lista-habilidades li {
     padding: 12px 20px;
-    background-color: plum;
-    border: 3px solid black;
-    border-radius: 50px;
+    background-color: #d9c7f0;
+    border: 1px solid black;
+    border-radius: 5px;
     font-weight: bold;
 }
 
 .botones-habilidades {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-/* PROYECTOS */
-.contenedor-proyectos{
+/* Seccion Proyectos */
+.contenedor-proyectos {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.proyecto{
+.proyecto {
     flex: 1;
     min-width: 250px;
     padding: 25px;
-    border: 1px solid black;
+    border: 1px solid #b9a0dc;
     border-radius: 8px;
-    background-color: bisque;
+    background-color: #f3ecfb;
 }
 
-.proyecto h3{
+.proyecto h3 {
     margin-top: 0;
     font-size: 22px;
 }
 
-.proyecto a{
-    color: rosybrown;
+.proyecto a {
+    color: #3b1459;
     font-weight: bold;
 }
 
-/* FORMULARIO DE CONTACTO */
+/* Formulario */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -219,7 +210,7 @@ form {
 .campo textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #bbb;
+    border: 1px solid #b9a0dc;
     border-radius: 5px;
     font-family: inherit;
     font-size: 16px;
@@ -229,14 +220,144 @@ form {
     resize: vertical;
 }
 
-/* PIE DE PAGINA */
+form button {
+    width: 100%;
+}
+
+/* Pie de pagina */
 footer {
     padding: 30px 20px;
     text-align: center;
-    background-color: #222;
+    background-color: black;
     color: white;
 }
 
 footer p {
     margin: 5px;
+}
+
+/* Administracion */
+.encabezado-admin {
+    position: relative;
+}
+
+/* Iconos (SVG negros y formales) */
+.icono {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: middle;
+}
+
+.regresar {
+    display: inline-flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+.regresar:hover {
+    color: #5b2a86;
+}
+
+/* Tabla de administracion */
+.tabla-mensajes {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-mensajes table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tabla-mensajes th,
+.tabla-mensajes td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-mensajes th {
+    background-color: #d9c7f0;
+    color: black;
+}
+
+.tabla-mensajes tr:hover {
+    background-color: #f3ecfb;
+}
+
+.acciones {
+    text-align: center !important;
+    white-space: nowrap;
+}
+
+.icono-accion {
+    display: inline-flex;
+    align-items: center;
+    margin: 3px;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.editar:hover,
+.borrar:hover {
+    background-color: #d9c7f0;
+    color: black;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Mensaje al editar */
+#resultadoEditar {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Diseno responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    .seccion-contenido h2 {
+        font-size: 32px;
+    }
+
+    .sobre-mi-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contenedor-proyectos {
+        flex-direction: column;
+    }
+
+    .tabla-mensajes th,
+    .tabla-mensajes td {
+        padding: 8px;
+    }
 }
