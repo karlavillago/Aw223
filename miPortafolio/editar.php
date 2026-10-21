@@ -1,3 +1,8 @@
+<?php
+require_once "consulta_mensajes.php";
+$id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
+$registro = consultaMensajePorId($id);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,21 +34,24 @@
         <section>
             <h2>Formulario de edicion</h2>
 
-            <form id="formEditar">
+            <?php if($registro){ ?>
+            <form id="formEditar" action="actualizar_mensaje.php" method="post">
+
+                <input type="hidden" name="id" value="<?php echo $registro['id']; ?>">
 
                 <div class="campo">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" value="" required>
+                    <input type="text" id="nombre" name="txtnombre" value="<?php echo htmlspecialchars($registro['nombre']); ?>" required>
                 </div>
 
                 <div class="campo">
                     <label for="correo">Correo electronico:</label>
-                    <input type="email" id="correo" value="" required>
+                    <input type="email" id="correo" name="txtcorreo" value="<?php echo htmlspecialchars($registro['correo']); ?>" required>
                 </div>
 
                 <div class="campo">
                     <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" rows="5" required></textarea>
+                    <textarea id="mensaje" name="txtmensaje" rows="5" required><?php echo htmlspecialchars($registro['mensaje']); ?></textarea>
                 </div>
 
                 <button type="submit">Actualizar mensaje</button>
@@ -51,6 +59,9 @@
                 <p id="resultadoEditar"></p>
 
             </form>
+            <?php } else { ?>
+            <p id="resultadoEditar">No se encontro el mensaje seleccionado.</p>
+            <?php } ?>
         </section>
     </main>
 
@@ -60,37 +71,23 @@
         <p>Practica de Programacion Web</p>
     </footer>
 
+    <script src="js/AlertInsert.js"></script>
     <script>
-        // Mensajes de ejemplo
-        var mensajes = {
-            1: {
-                nombre: "Karla María",
-                correo: "ejemplo@correo.com",
-                mensaje: "Hola, me gusto tu portafolio."
-            }
-        };
+        // Validar que no se envien campos vacios (ni solo espacios)
+        var formEditar = document.getElementById("formEditar");
+        if (formEditar) {
+            formEditar.addEventListener("submit", function(event) {
+                var nombre  = document.getElementById("nombre").value.trim();
+                var correo  = document.getElementById("correo").value.trim();
+                var mensaje = document.getElementById("mensaje").value.trim();
 
-        // Obtener el numero del mensaje seleccionado
-        var parametros = new URLSearchParams(window.location.search);
-        var id = parametros.get("id");
-
-        // Mostrar los datos en el formulario
-        if (mensajes[id]) {
-            document.getElementById("nombre").value = mensajes[id].nombre;
-            document.getElementById("correo").value = mensajes[id].correo;
-            document.getElementById("mensaje").value = mensajes[id].mensaje;
-        } else {
-            document.getElementById("resultadoEditar").textContent =
-                "No se encontro el mensaje seleccionado.";
+                if (nombre === "" || correo === "" || mensaje === "") {
+                    event.preventDefault();
+                    document.getElementById("resultadoEditar").textContent =
+                        "No se permiten campos vacios.";
+                }
+            });
         }
-
-        // Simular la actualizacion
-        document.getElementById("formEditar").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            document.getElementById("resultadoEditar").textContent =
-                "Los cambios no se guardan permanentemente.";
-        });
     </script>
 
 </body>

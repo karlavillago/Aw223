@@ -40,7 +40,7 @@
         <section id="sobre-mi"> 
             <h2>Sobre mi</h2> 
             <div class="sobre-mi-contenido"> 
-                <img src="" alt=""> 
+                <img src="img/perfil.jpg" alt="Foto de Karla María"> 
                 <div> 
                     <p>Algo sobre mi</p> 
                     <p>En esta practica estoy aprendiendo HTML y CSS</p> 

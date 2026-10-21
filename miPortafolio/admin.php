@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    
 
     <!-- Encabezado -->
     <header class="encabezado-admin">
@@ -58,12 +59,10 @@
                         <a href='editar.php?id=".$arrMensaje['id']."'
                         class='icono-accion editar'
                         title='Editar mensaje'>".$iconoEditar."</a>
-                        <button type='button'
+                        <a href='borrar_mensaje.php?id=".$arrMensaje['id']."'
                         class='icono-accion borrar'
                         title='Borrar mensaje'
-                        onclick=\"alert('La opción de borrar se habilitará después.')\">
-                        ".$iconoBorrar."
-                        </button>
+                        onclick=\"return confirm('Estas seguro de borrar este mensaje');\">".$iconoBorrar."</a>
                         </td>
                         </tr>";
                         }
@@ -80,5 +79,6 @@
         <p>Practica de Programacion Web</p>
     </footer>
 
+    <script src="js/AlertInsert.js"></script>
 </body>
 </html>
