@@ -24,7 +24,6 @@ export default function App(){
             />
           ))
           }
-
         </ul>
         <p>Total de estudiantes: {estudiantes.length}</p>
       </main>
