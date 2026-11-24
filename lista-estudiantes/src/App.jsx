@@ -3,9 +3,9 @@ import "./App.css";
 
 export default function App(){
   const estudiantes = [
-    {id:1,nombre:"Cristopher",carrera:"Sistemas"},
-    {id:2,nombre:"Maricruz",carrera:"Redes"},
-    {id:3,nombre:"Ricardo",carrera:"Comercio"},
+    {id:1,nombre:"Dul",carrera:"Sistemas"},
+    {id:2,nombre:"Karlota",carrera:"Redes"},
+    {id:3,nombre:"Ayelen",carrera:"Comercio"},
   ];
   return(
       <main className ="contenedor">
@@ -24,6 +24,7 @@ export default function App(){
             />
           ))
           }
+
         </ul>
         <p>Total de estudiantes: {estudiantes.length}</p>
       </main>
